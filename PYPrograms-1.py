@@ -206,7 +206,7 @@ Made by [Brian Fopiano] at Cogswell Polytech, for
         elif modi == 2:
             module2()
         elif modi == 0:
-            SystemExit()
+            exit()
         else:
             print("Please use a module!")
             Everything()

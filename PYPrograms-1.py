@@ -4,7 +4,26 @@ import sys
 import time
 #BASE IMPORT FOR EVERYTHING
 def Everything():
-    print("""------------------------------------------------------------------------------------
+    print("""
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------
 ███████╗██╗   ██╗███████╗██████╗ ██╗   ██╗████████╗██╗  ██╗██╗███╗   ██╗ ██████╗ ██╗
 ██╔════╝██║   ██║██╔════╝██╔══██╗╚██╗ ██╔╝╚══██╔══╝██║  ██║██║████╗  ██║██╔════╝ ██║
 █████╗  ██║   ██║█████╗  ██████╔╝ ╚████╔╝    ██║   ███████║██║██╔██╗ ██║██║  ███╗██║
@@ -12,8 +31,10 @@ def Everything():
 ███████╗ ╚████╔╝ ███████╗██║  ██║   ██║      ██║   ██║  ██║██║██║ ╚████║╚██████╔╝██╗
 ╚══════╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝   ╚═╝      ╚═╝   ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚═╝                                                                                  
 Made by [Brian Fopiano] at Cogswell Polytech, for
-9MSU-CS100CA-Introduction to Scripting: Python - J.J. Sheu
+9MSU-CS100CA-Introduction to Scripting: Python - J.J. Sheu 
 ------------------------------------------------------------------------------------
+
+
 """)
 #MODULE ONE HERE
     def module1():
@@ -142,7 +163,7 @@ Made by [Brian Fopiano] at Cogswell Polytech, for
 
             while active:
                 print( "This program is to showcase the assignments done!" )
-                print("MODULE 2 EDITION! [SPHERES] Press 1 to start, and 0 to close!")
+                print("MODULE 2 EDITION! [SPHERES] Press 1 to start, or back to Everything [0]: ")
                 time.sleep(0.1)
 
                 try:
@@ -162,33 +183,47 @@ Made by [Brian Fopiano] at Cogswell Polytech, for
                         active = False
                         Everything()
                     elif PNum > 5:
-                        print("Please use proper numbers or 0 to close")
+                        print("Please use proper numbers or back to Everything [0]: ")
                 except ValueError:
                     print("This is NOT a value Try again!")
         main()
 #MODULE THREE HERE
     def module3():
         def main():
+            months = str("JanFebMarAprMayJunJulAugSepOctNovDec")
             active = True
-
             while active:
-                print( "This program is to showcase the assignments done!" )
-                print("MODULE 3 EDITION [MONTHS]")
+                print( "This program is to showcase the assignments done! MODULE 3 EDITION [MONTHS]" )
+                print("With key: ", months)
                 time.sleep(0.1)
 
                 try:
-                    PNum = int(input( "Which program: " ))
+                    print
+                    PNum = int(input( "Start program? [1] or back to Everything [0]: " ))
                     if PNum == 1:
-#
-                        print("Thank you! Ill send you back to the menu!")
-                        time.sleep(2.5)
-                        Everything()
+                        i = int(input("Give me a number 1-12: "))
+                        if i > 1 | i < 13:
+                            print("Number within range!")
+
+
+                            print("Back to everything! in 2 Seconds!")
+                            time.sleep(2)
+                            Everything()
+                        elif i > 12 | i <1:
+                            print("NUMBER NOT IN RANGE PLEASE ENTER A VALUE WITHIN 1-12 (or back to Everything [0]): ")
+                            print("Returning you to the MONTHS module in 2 seconds")
+                            time.sleep(2)
+                        elif modi == 0:
+                            Everything()
+                        else:
+                            print("Please use a module!")
+                            Everything()                   
                     elif PNum == 0:
                         print(" ")
                         active = False
                         Everything()
                     elif PNum > 5:
-                        print("Please use proper numbers or 0 to close")
+                        print("Please use proper numbers or back to Everything [0]: ")
                 except ValueError:
                     print("This is NOT a value Try again!")
         main()
@@ -199,12 +234,14 @@ Made by [Brian Fopiano] at Cogswell Polytech, for
         print("Module 2: Week-01 Wed-Thu (07/10 - 07/11) Assignment (DONE) [SPHERE VOLUME]")
         print("Module 3: Week-02 Mon-Tue (07/15 - 07/16) Assignment (NOT DONE) []")
         print("Module 4: Week-02 Wed-Thu (07/17 - 07/18) Assignment (NOT DONE) [MONTHS]")
-        modi = int(input( "Which Module? module: 1, 2, 3, 4, or close '0':" ))
+        modi = int(input( "Which Module? module: [1], [2], [3], [4], OR CLOSE WITH --> [0]: " ))
 
         if modi == 1:
             module1()
         elif modi == 2:
             module2()
+        elif modi == 3:
+            module3()
         elif modi == 0:
             exit()
         else:

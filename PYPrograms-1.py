@@ -155,6 +155,11 @@ Made by [Brian Fopiano] at Cogswell Polytech, for
             #
             #Kill / deny area
             #
+            # 
+        def bonus(PNum):
+
+
+            main()
         main()
 #MODULE TWO HERE
     def module2():
@@ -169,13 +174,24 @@ Made by [Brian Fopiano] at Cogswell Polytech, for
                 try:
                     PNum = int(input( "Which program: " ))
                     if PNum == 1:
+                        isNeg = false
+
+         
+                        # CIRCLE CALC
                         pi= float(math.pi)
                         print(pi,'<-- pi')
                         Rad = int(input('Radius: '))
-                        Sa = 4 * pi * Rad **2
-                        Vol = (4/3) * (pi * Rad ** 3)
-                        print("Surface Area SU(Square units): ", Sa)
-                        print("Volume in CU(Cubic units): ", Vol)
+                        if Rad >=0:
+                            isNeg = False
+                            Sa = 4 * pi * Rad **2
+                            Vol = (4/3) * (pi * Rad ** 3)
+                            print("Surface Area SU(Square units): ", Sa)
+                            print("Volume in CU(Cubic units): ", Vol)
+                        elif Rad < 0:
+                            print("Please enter a positive value! try again!")
+                        #END OF CIRCLE
+               
+
                         input("Press any key to go back to the main menu!")
                         Everything()
                     elif PNum == 0:
@@ -198,28 +214,177 @@ Made by [Brian Fopiano] at Cogswell Polytech, for
                 time.sleep(0.1)
 
                 try:
-                    print
+                    
+                    MS = -3 
+                    ME = 0
+                    PAX = 0
                     PNum = int(input( "Start program? [1] or back to Everything [0]: " ))
                     if PNum == 1:
-                        i = int(input("Give me a number 1-12: "))
-                        if i > 1 | i < 13:
-                            print("Number within range!")
-
-
-                            print("Back to everything! in 2 Seconds!")
-                            time.sleep(2)
-                            Everything()
-                        elif i > 12 | i <1:
-                            print("NUMBER NOT IN RANGE PLEASE ENTER A VALUE WITHIN 1-12 (or back to Everything [0]): ")
-                            print("Returning you to the MONTHS module in 2 seconds")
-                            time.sleep(2)
-                        elif modi == 0:
-                            Everything()
-                        else:
-                            print("Please use a module!")
-                            Everything()                   
+                        #
+                        def Monthy():
+                        #
+                        #
+                            PAX = int(input('Give me a number 1-12 or back to Everything [0]: '))
+                            if PAX > 0 and PAX < 13:
+                                #VArs
+                                MDD = int(PAX*3)
+                                MSD = int(MDD + MS)
+                                MED = int(MDD + ME)
+                                #VArs
+                                print ('You said: ', months[MSD:MED])
+                                print("TRY AGAIN!")
+                                time.sleep(0.5)
+                                Monthy()
+                            elif modi == 0:
+                                Everything()
+                            else:
+                                print("Please use a module! [NOT A NUMBER / IN RANGE]")
+                                Monthy() 
+                                #
+                                #
+                        Monthy()                 
                     elif PNum == 0:
                         print(" ")
+                        active = False
+                        Everything()
+                    elif PNum > 5:
+                        print("Please use proper numbers or back to Everything [0]: ")
+                except ValueError:
+                    print("This is NOT a value Try again!")
+        main()
+#MODULE FOUR HERE
+    def module4():
+        def main():
+            active = True
+
+            while active:
+                print( "This program is to showcase the assignments done!" )
+                print("MODULE 4 EDITION! [STRING SLICING] Press 1 to start, or back to Everything [0]: ")
+                time.sleep(0.1)
+
+                try:
+                    PNum = int(input( "Start program? [1] Go back [0] " ))
+                    if PNum == 1:
+
+                        # BEGIN SLICER
+                        def slicer():
+                            print("STARTING THE SLICER... Setting defailts...")
+                            
+                            #defaults
+                            PString = "Example String!"
+                            StartInt = 0
+                            EndInt = 13
+                            #defaults
+
+                            #try the string
+                            try:
+                                PString = str(input("PLEASE ENTER A STRING: "))
+                            except ValueError:
+                                print("AhHHHA WhaT diD you dOOoO")
+                                slicer()
+                            #try the int
+                            try:
+                                StartInt = float(input("Please enter a starting integer: "))
+                            except ValueError:
+                                print("That's not a Integer! Whole numbers please!")
+                                slicer()                            
+                            #try the int
+                            try:
+                                EndInt = float(input("Please enter a ending integer: "))
+                            except ValueError:
+                                print("That's not an integer!")
+                                slicer()
+
+                            PStringNum = len(PString)
+                            
+                            print("The lengts of that string is [",PStringNum ,"]")
+                            main()
+                        #END OF SLICER
+                        slicer()
+                        input("Press any key to go back to the main menu!")
+                        Everything()
+                    elif PNum == 0:
+                        print(" ")
+                        active = False
+                        Everything()
+                    elif PNum > 5:
+                        print("Please use proper numbers or back to Everything [0]: ")
+                except ValueError:
+                    print("This is NOT a value Try again!")
+        main()
+#MODULE FIVE HERE
+    def module5():
+        def main():
+            active = True
+
+            while active:
+                print( "This program is to showcase the assignments done!" )
+                print("MODULE 5 EDITION! [Character Assignment] Press 1 to start, or back to Everything [Any Negative Number]: ")
+                time.sleep(0.1)
+
+                try:
+                    PNum = int(input( "Start program? [1] Go back [0] " ))
+                    if PNum == 1:
+                        # BEGIN MODULE
+                        try:
+                            def NumT():
+                                grade = float(input("Please input a number!: ")) 
+                                if grade >= float(90):
+                                    print("""Character A""")
+                                    NumT()
+                                elif (grade <90.0 and grade>=80.0):
+                                    print("""Character B""")
+                                    NumT()
+                                elif (grade <80.0 and grade>=70.0):
+                                    print("""Character C""")
+                                    NumT()
+                                elif (grade <70 and grade>=60):
+                                    print("Character D")
+                                    NumT()
+                                elif (grade <60 and grade>=0):
+                                    print("Character F")
+                                    NumT()
+                                elif (grade < 0):
+                                    main()
+                            NumT()    
+                        
+                        except ValueError:
+                            print("Please use a number!")
+                        #END OF MODULE
+                    elif PNum == 0:
+                        print("You hsve entered a negative value! Goodbye!")
+                        active = False
+                        Everything()
+                    elif PNum > 5:
+                        print("Please use proper numbers or back to Everything [0]: ")
+                except ValueError:
+                    print("This is NOT a value Try again!")
+        main()
+#MODULE SIX HERE
+    def module6():
+        def main():
+            active = True
+
+            while active:
+                print( "This program is to showcase the assignments done!" )
+                print("MODULE 6 EDITION! [FACTORIALIZED ADDITION TO 5000] Press 1 to start, or back to Everything [0]: ")
+                time.sleep(0.1)
+                try:
+                    PNum = int(input( "Start program? [1] Go back [0] " ))
+                    if PNum == 1:
+                        # BEGIN MODULE
+                        print("PLACEHOLDER")
+
+
+
+
+
+
+
+                        
+                        #END OF MODULE
+                    elif PNum == 0:
+                        print("Goodbye!")
                         active = False
                         Everything()
                     elif PNum > 5:
@@ -230,10 +395,15 @@ Made by [Brian Fopiano] at Cogswell Polytech, for
 #MODULE IDENTIFICATION HERE
     try:
         
-        print("Module 1: Week-01 Mon-Tue (07/08 - 07/09) Assignment (DONE) [BASICS]")
-        print("Module 2: Week-01 Wed-Thu (07/10 - 07/11) Assignment (DONE) [SPHERE VOLUME]")
-        print("Module 3: Week-02 Mon-Tue (07/15 - 07/16) Assignment (NOT DONE) []")
-        print("Module 4: Week-02 Wed-Thu (07/17 - 07/18) Assignment (NOT DONE) [MONTHS]")
+        print("Module 1: Week-01 Wed-Thu (07/10 - 07/11) Assignment [] (5 Programs)")
+        print("Module 2: Week-02 Mon-Tue (07/15 - 07/16) Assignment [] (Sphere Calculaion)")
+        print("Module 3: Week-02 Wed-Thu (07/17 - 07/18) Assignment [] (Month by number)")
+        print("Module 4: Week-03 Mon-Tue (07/22 - 07/23) Assignment [] (Slicing Index) ")
+        print("Module 5: Week-03 Wed-Thu (07/24 - 07/25) Assignment [] (Grades by Number)")
+        print("Module PREP: Week-04 Mon-Tue (07/29 - 07/30) Preparation[---] ")
+        print("Module 6: Week-04 Wed-Thu (07/31 - 08/01) Assignment [] (Count to 5000 Factorial)")
+        print("Module 7: Week-05 Mon-Tue (08/05 - 08/06) Assignment [] (Java/Python Justification)")
+        
         modi = int(input( "Which Module? module: [1], [2], [3], [4], OR CLOSE WITH --> [0]: " ))
 
         if modi == 1:
@@ -242,6 +412,10 @@ Made by [Brian Fopiano] at Cogswell Polytech, for
             module2()
         elif modi == 3:
             module3()
+        elif modi == 4:
+            module4()
+        elif modi == 5:
+            module5()
         elif modi == 0:
             exit()
         else:

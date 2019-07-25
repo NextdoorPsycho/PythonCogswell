@@ -367,7 +367,7 @@ Made by [Brian Fopiano] at Cogswell Polytech, for
 
             while active:
                 print( "This program is to showcase the assignments done!" )
-                print("MODULE 6 EDITION! [FACTORIALIZED ADDITION TO 5000] Press 1 to start, or back to Everything [0]: ")
+                print("MODULE 6 EDITION! [PASSWORDS] Press 1 to start, or back to Everything [0]: ")
                 time.sleep(0.1)
                 try:
                     PNum = int(input( "Start program? [1] Go back [0] " ))
@@ -417,7 +417,6 @@ Made by [Brian Fopiano] at Cogswell Polytech, for
                                 if error:
                                     print("YOU NEED A NUMBER!!!")
                                     continue
-                                
                                 error = True
                                 for i in special:
                                     if i in Pas:
@@ -426,12 +425,64 @@ Made by [Brian Fopiano] at Cogswell Polytech, for
                                 if error:
                                     print("Be sure to have a Special character!")
                                     continue
-
                                 print("Password set!")
-                                PASSWORDINIT()
-                            PASSWORDINIT()
                         PASSWORDINIT()
                         #END OF MODULE
+                    elif PNum == 0:
+                        print("Goodbye!")
+                        active = False
+                        Everything()
+                    elif PNum > 5:
+                        print("Please use proper numbers or back to Everything [0]: ")
+                except ValueError:
+                    print("This is NOT a value Try again!")
+        main()
+#MODULE SEVEN HERE
+    def module7():
+        def main():
+            active = True
+
+            while active:
+                print( "This program is to showcase the assignments done!" )
+                print("MODULE 6 EDITION! [interleave Lists] Press 1 to start, or back to Everything [0]: ")
+                time.sleep(0.1)
+                try:
+                    PNum = int(input( "Start program? [1] Go back [0] " ))      
+                    if PNum == 1:
+                        def stuff():
+                            # BEGIN MODULE
+                            #DEFAULT VALUES
+                            PrimNum = [1,2,3,4,5,6,7 ]
+                            SecoNum = ['A','B','C','D','E']
+                            Mediator = []
+                            #DEFAULT VALUES
+                            Count = len(PrimNum)
+                            #Get the length of PrimNum
+                            Spell = len(SecoNum)
+                            #Get the length of SecNum
+                            FxRange = min(Count,Spell)
+                            #Make a range minimum (array) with the numbers of Count and Spell
+                            #\/ While "Var" is in the range of  "FxRange" do...
+                            for var in range( FxRange ):
+                                Mediator.append(PrimNum[var])
+                                Mediator.append(SecoNum[var])
+                                #... append in an alternating mediator the first/second 
+                            #if the count(number of places in PrimNim) is larger than the roral range...
+                            if(Count>FxRange):
+                                for var in range(FxRange,Count):
+                                    Mediator.append(PrimNum[var])
+                                    #... keep doing this ^
+                            elif(Spell >FxRange):
+                                for var in range(FxRange,Spell):
+                                    Mediator.append(SecoNum[var])
+                            print("""  
+                            """)
+                            print("VARIABLES INCLUDE: ", PrimNum, " AND ", SecoNum)
+                            time.sleep(1)
+                            print("RESULT: ", Mediator )
+                            time.sleep(3)
+                        stuff() 
+                            #END OF MODULE
                     elif PNum == 0:
                         print("Goodbye!")
                         active = False
@@ -449,7 +500,7 @@ Made by [Brian Fopiano] at Cogswell Polytech, for
         print("Module 3: Week-02 Wed-Thu (07/17 - 07/18) Assignment [] (Month by number)")
         print("Module 4: Week-03 Mon-Tue (07/22 - 07/23) Assignment [] (Slicing Index) ")
         print("Module 5: Week-03 Wed-Thu (07/24 - 07/25) Assignment [] (Grades by Number)")
-        print("Module 6: Week-04 Mon-Tue (07/29 - 07/30) Assignment [] (Pas) ")
+        print("Module 6: Week-04 Mon-Tue (07/29 - 07/30) Assignment [] (PassWord) ")
         print("Module 7: Week-03 Mon-Tue (07/22 - 07/23) Assignment [] (interleave Lists)")
         print("Module 8: Week-04 Wed-Thu (07/31 - 08/01) Assignment [] (Add Up To 5000)")
         print("Module 9: Week-05 Mon-Tue (08/05 - 08/06) Assignment [] (Python Java Scores)")
@@ -470,6 +521,8 @@ Made by [Brian Fopiano] at Cogswell Polytech, for
             module5()
         elif modi == 6:
             module6()
+        elif modi ==7:
+            module7()
         elif modi == 0:
             exit()
         else:

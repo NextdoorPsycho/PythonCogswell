@@ -374,14 +374,63 @@ Made by [Brian Fopiano] at Cogswell Polytech, for
                     if PNum == 1:
                         # BEGIN MODULE
                         print("PLACEHOLDER")
+                        uC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ♥"
+                        lC = "abcdefghijklmnopqrstuvwxyz♥"
+                        Num = "0123456789"
+                        special = "!@#$%^&*()_-+=\/|/?.>,<`~♥"
+                        def PASSWORDINIT():
+                            while True:
+                                Pas = input("Password please: ")
+                                Len = len(Pas)
+                                if Len == 0:
+                                    break
+                                elif Len > 12:
+                                    print("YOU MAY NOT HAVE A PASSWORD THAT LONG")
+                                    continue
+                                elif Len < 6:
+                                    print("YOU MAY NOT HAVE A PASSWORD THAT SHORT")
+                                    continue
+                                elif ' ' in Pas:
+                                    print("""The " " Character is not allowed!""")
+                                    continue
+                                error = True
+                                for i in uC:
+                                    if i in Pas:
+                                        error = False
+                                        break
+                                if error:
+                                    print("You need an upper case character!" )
+                                    continue
+                                error = True
+                                for i in lC:
+                                    if i in Pas:
+                                        error = False
+                                        break
+                                if error:
+                                    print("You need a lowercase character!" )
+                                    continue
+                                error = True
+                                for i in Num:
+                                    if i in Pas:
+                                        error = False
+                                        break
+                                if error:
+                                    print("YOU NEED A NUMBER!!!")
+                                    continue
+                                
+                                error = True
+                                for i in special:
+                                    if i in Pas:
+                                        error = False
+                                        break
+                                if error:
+                                    print("Be sure to have a Special character!")
+                                    continue
 
-
-
-
-
-
-
-                        
+                                print("Password set!")
+                                PASSWORDINIT()
+                            PASSWORDINIT()
+                        PASSWORDINIT()
                         #END OF MODULE
                     elif PNum == 0:
                         print("Goodbye!")
@@ -400,9 +449,12 @@ Made by [Brian Fopiano] at Cogswell Polytech, for
         print("Module 3: Week-02 Wed-Thu (07/17 - 07/18) Assignment [] (Month by number)")
         print("Module 4: Week-03 Mon-Tue (07/22 - 07/23) Assignment [] (Slicing Index) ")
         print("Module 5: Week-03 Wed-Thu (07/24 - 07/25) Assignment [] (Grades by Number)")
-        print("Module PREP: Week-04 Mon-Tue (07/29 - 07/30) Preparation[---] ")
-        print("Module 6: Week-04 Wed-Thu (07/31 - 08/01) Assignment [] (Count to 5000 Factorial)")
-        print("Module 7: Week-05 Mon-Tue (08/05 - 08/06) Assignment [] (Java/Python Justification)")
+        print("Module 6: Week-04 Mon-Tue (07/29 - 07/30) Assignment [] (Pas) ")
+        print("Module 7: Week-03 Mon-Tue (07/22 - 07/23) Assignment [] (interleave Lists)")
+        print("Module 8: Week-04 Wed-Thu (07/31 - 08/01) Assignment [] (Add Up To 5000)")
+        print("Module 9: Week-05 Mon-Tue (08/05 - 08/06) Assignment [] (Python Java Scores)")
+        print("Module 10: Week-05 Wed-Thu (08/07 - 08/08) Assignment [] (Slicing Boundary Checking)")
+        print("Module 11: Week-06 Mon-Tue-Wed-Thu (08/12 - 08/13) Assignment [] (Face)")
         
         modi = int(input( "Which Module? module: [1], [2], [3], [4], OR CLOSE WITH --> [0]: " ))
 
@@ -416,6 +468,8 @@ Made by [Brian Fopiano] at Cogswell Polytech, for
             module4()
         elif modi == 5:
             module5()
+        elif modi == 6:
+            module6()
         elif modi == 0:
             exit()
         else:

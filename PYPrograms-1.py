@@ -444,7 +444,7 @@ Made by [Brian Fopiano] at Cogswell Polytech, for
 
             while active:
                 print( "This program is to showcase the assignments done!" )
-                print("MODULE 6 EDITION! [interleave Lists] Press 1 to start, or back to Everything [0]: ")
+                print("MODULE 7 EDITION! [interleave Lists] Press 1 to start, or back to Everything [0]: ")
                 time.sleep(0.1)
                 try:
                     PNum = int(input( "Start program? [1] Go back [0] " ))      
@@ -492,6 +492,49 @@ Made by [Brian Fopiano] at Cogswell Polytech, for
                 except ValueError:
                     print("This is NOT a value Try again!")
         main()
+#MODULE EIGHT HERE
+    def module8():
+        def main():
+            active = True
+
+            while active:
+                print( "This program is to showcase the assignments done!" )
+                print("MODULE 6 EDITION! [PASSWORDS] Press 1 to start, or back to Everything [0]: ")
+                time.sleep(0.1)
+                try:
+                    PNum = int(input( "Start program? [1] Go back [0] " ))
+                    if PNum == 1:
+                        # BEGIN MODULE
+                        print("PLACEHOLDER")
+                        def _5000():
+                            SVar = 0
+                            TVar = 0
+                            Cont = 0.1
+                            print("TVar =+ 1")
+                            while SVar<5000:
+                                if SVar < 90:
+                                    Cont = 0.3
+                                else:
+                                    Cont = 0.01
+                                TVar += 1
+                                SVar = SVar + TVar
+                                print("Svar: ",SVar,"|  TVar: ",TVar)
+                                time.sleep(Cont)
+                            else:
+                                print(SVar)
+                                exit()
+                                pass
+                        _5000()
+                        #END OF MODULE
+                    elif PNum == 0:
+                        print("Goodbye!")
+                        active = False
+                        Everything()
+                    elif PNum > 5:
+                        print("Please use proper numbers or back to Everything [0]: ")
+                except ValueError:
+                    print("This is NOT a value Try again!")
+        main()
 #MODULE IDENTIFICATION HERE
     try:
         
@@ -523,6 +566,8 @@ Made by [Brian Fopiano] at Cogswell Polytech, for
             module6()
         elif modi ==7:
             module7()
+        elif modi ==8:
+            module8()
         elif modi == 0:
             exit()
         else:
